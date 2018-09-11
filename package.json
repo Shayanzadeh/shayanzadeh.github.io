@@ -1,0 +1,27 @@
+{
+  "name": "shayanzadeh.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss --output-style compressed -o css",
+    "serve": "browser-sync start --server --files=\"css/*.css\",\"**/*.html\" --port 8000 --no-open --no-notify",
+    "dev": "npm run scss & npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shayanzadeh/shayanzadeh.github.io.git"
+  },
+  "author": "Shayan Yousefizadeh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shayanzadeh/shayanzadeh.github.io/issues"
+  },
+  "homepage": "https://github.com/Shayanzadeh/shayanzadeh.github.io#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.24.7",
+    "node-sass": "^4.9.3"
+  }
+}
