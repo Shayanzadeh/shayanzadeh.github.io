@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Shayan Yousefizadeh is a Software Developer in Dublin, Ireland.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/home.css">
+  <title>Shayan Yousefizadeh</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header-container">
+      <div class="mugshot-container">
+        <img src="/images/mugshot.jpg" alt="Mugshot" class="mugshot" srcset="/images/mugshot@2x.jpg 2x, /images/mugshot@3x.jpg 3x">
+        <img src="/images/memoji-1.png" id="memoji" style="display: none;">
+      </div>
+      <div class="intro-container">
+        <h1 class="name"><a href="/">Shayan Yousefizadeh</a></h1>
+        <p class="description">I'm a software developer specialising in iOS. I strive for efficiency and well designed experiences. Previously I lead iOS development at <a href="http://www.thejournal.ie">TheJournal</a>.</p>
+      </div>
+    </header>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="/cv/">Curriculum Vitae</a></li>
+          <li><a href="https://twitter.com/shayanzadeh">Twitter</a></li>
+          <li><a href="https://www.linkedin.com/in/shayanzadeh/">LinkedIn</a></li>
+          <li><a href="https://github.com/shayanzadeh/">GitHub</a></li>
+          <li><a href="https://itunes.apple.com/profile/shayanzadeh">Apple Music</a></li>
+          <li><a href="https://www.last.fm/user/Shayanzadeh">Last.fm</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    var i = 0;
+
+    function goofItUp() {
+      i++
+      var memoji = document.getElementById("memoji")
+
+      if (i % 4 == 0) {
+        memoji.style.setProperty("display", "none")
+      } else {
+        memoji.style.setProperty("display", "block")
+        memoji.setAttribute("src", "/images/memoji-" + (i % 4) + ".png")
+      }
+    }
+
+    var el = document.getElementsByClassName("mugshot-container")[0]
+    el.addEventListener("click", goofItUp, false)
+  </script>
+</body>
+
+</html>

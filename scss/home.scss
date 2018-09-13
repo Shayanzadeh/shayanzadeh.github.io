@@ -1,0 +1,65 @@
+@import "styles";
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+
+  @media (max-width:780px) {
+    flex-direction: column;
+  }
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-right: $gutter-width;
+
+  @media (max-width:780px) {
+    margin-right: 0;
+    margin-top: 1rem;
+  }
+}
+
+.mugshot-container {
+  flex: 1;
+  position: relative;
+}
+
+.description {
+  font-size: 1.3rem;
+
+  @include desktop {
+    font-size: 1.5rem;
+  }
+}
+
+.name {
+  @include desktop {
+    font-size: 2.5rem;
+  }
+}
+
+.mugshot {
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+
+  @include desktop {
+    max-width: none;
+  }
+}
+
+#memoji {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+
+  @include desktop {
+    max-width: none;
+  }
+}
