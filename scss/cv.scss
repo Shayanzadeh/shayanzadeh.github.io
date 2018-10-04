@@ -1,0 +1,128 @@
+@import "styles";
+
+.title {
+  font-style: italic;
+}
+
+%grid-two-column {
+  @include desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: $gutter-width;
+  }
+}
+
+.education-container {
+  @extend %grid-two-column;
+}
+
+.experience-container {
+  @extend %grid-two-column;
+}
+
+.projects-container {
+  @extend %grid-two-column;
+}
+
+.skills-container {
+  @extend %grid-two-column;
+}
+
+.experience-journal {
+  grid-row-end: span 2;
+}
+
+.skill-mobile {
+  grid-row-end: span 2;
+}
+
+.description {
+  @include desktop {
+    font-size: 1.5em;
+  }
+}
+
+.name {
+  @include desktop {
+    font-size: 2.5em;
+  }
+
+  &::before {
+    content: "👨‍💻 ";
+  }
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  border-bottom: 1px solid;
+  padding: 0 100px 12px 0;
+  display: inline-block;
+
+  @include mobile {
+    display: block;
+    padding-right: 0;
+  }
+}
+
+.interests-container {
+  @extend %grid-two-column;
+}
+
+h1 {
+  @include mobile {
+    font-size: 1.4rem;
+  }
+}
+
+h2 {
+  @include mobile {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+}
+
+h3 {
+  @include mobile {
+    font-size: 1.06rem;
+  }
+}
+
+p {
+  @include mobile {
+    font-size: 1rem;
+  }
+}
+
+%proficiency {
+  margin-left: 8px;
+  text-transform: uppercase;
+  font-size: .8em;
+  font-family: $sans-serif-font;
+  font-weight: bold;
+}
+
+.proficiency-one::after {
+  @extend %proficiency;
+  content: "★☆☆☆☆";
+}
+
+.proficiency-two::after {
+  @extend %proficiency;
+  content: "★★☆☆☆";
+}
+
+.proficiency-three::after {
+  @extend %proficiency;
+  content: "★★★☆☆";
+}
+
+.proficiency-four::after {
+  @extend %proficiency;
+  content: "★★★★☆";
+}
+
+.proficiency-five::after {
+  @extend %proficiency;
+  content: "★★★★★";
+}
