@@ -36,22 +36,22 @@
   </div>
 
   <script>
-    var i = 0;
+    let i = 0;
 
-    function goofItUp() {
+    const goofItUp = () => {
       i++
-      var memoji = document.getElementById("memoji")
+      let memoji = document.getElementById("memoji");
 
       if (i % 4 == 0) {
-        memoji.style.setProperty("display", "none")
+        memoji.style.setProperty("display", "none");
       } else {
-        memoji.style.setProperty("display", "block")
-        memoji.setAttribute("src", "/images/memoji-" + (i % 4) + ".png")
+        memoji.style.setProperty("display", "block");
+        memoji.setAttribute("src", `/images/memoji-${i%4}.png`);
       }
     }
 
-    var el = document.getElementsByClassName("mugshot-container")[0]
-    el.addEventListener("click", goofItUp, false)
+    var el = document.getElementsByClassName("mugshot-container")[0];
+    el.addEventListener("click", goofItUp, false);
   </script>
 </body>
 
