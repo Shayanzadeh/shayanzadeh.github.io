@@ -14,7 +14,7 @@
   <div class="wrapper">
     <header>
       <h1 class="name"><a href="/">Shayan Yousefizadeh</a></h1>
-      <p class="description">${age} year old developer with 3.5 years of experience in native iOS development</p>
+      <p class="description">${age} year old developer with ${experience} years professional experience in native iOS development</p>
     </header>
     <section>
       <h2>Experience</h2>
@@ -34,7 +34,7 @@
         <div class="experience">
           <h3>Hive</h3>
           <p class="title">iOS Developer (Jun–Aug 2014)</p>
-          <p>Developed a ticketing app for the startup.</p>
+          <p>Developed a fully functioning ticketing app for the startup from the ground up.</p>
         </div>
       </div>
     </section>
@@ -87,17 +87,17 @@
       <div class="skills-container">
         <div class="skill skill-mobile">
           <h3>Mobile</h3>
-          <p>Following the iOS community closely and keeping up-to-date. Two of my favourite WWDC talks are <a href="https://developer.apple.com/videos/play/wwdc2018/223/">“Embracing Algorithms”</a> and <a href="https://developer.apple.com/videos/play/wwdc2015/408/">“Protocol-Oriented
-              Programming in Swift”</a>.</p>
+          <p>An  fanboy at heart, I closely follow the iOS community and am consistently up-to-date.</p>
           <ul class="tags">
             <li class="proficiency-five">Objective-C</li>
-            <li class="proficiency-four">Swift 4.2</li>
+            <li class="proficiency-five">Swift</li>
             <li class="proficiency-five">UIKit</li>
             <li class="proficiency-five">Foundation</li>
             <li class="proficiency-three">Core Graphics</li>
             <li>Core Animation</li>
-            <li class="proficiency-three">XCTest</li>
+            <li class="proficiency-three">Testing</li>
             <li class="proficiency-five">Autolayout</li>
+            <li class="proficiency-four">Carthage</li>
           </ul>
         </div>
         <div class="skill">
@@ -144,15 +144,17 @@
   </div>
 
   <script>
-    let calcAge = birthday => {
+    let yearsSince = date => {
       var now = Date.now() / 1000; // ms -> s
-      var elapsed = now - birthday;
+      var elapsed = now - date;
       return Math.floor(elapsed / (60 * 60 * 24 * 365));
     };
 
-    var age = calcAge(729691200);
-    var element = document.getElementsByClassName("description")[0];
-    element.textContent = element.textContent.replace("${age}", age);
+    var age = yearsSince(729691200);
+    var experience = yearsSince(1420113600);
+    var descriptionElement = document.getElementsByClassName("description")[0];
+    descriptionElement.textContent = descriptionElement.textContent.replace("${age}", age).replace("${experience}", experience);
+
   </script>
 </body>
 
