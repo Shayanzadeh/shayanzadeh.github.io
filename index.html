@@ -14,8 +14,9 @@
   <div class="wrapper">
     <header class="header-container">
       <div class="mugshot-container">
-        <img src="/images/mugshot.jpeg" alt="Mugshot" class="mugshot" srcset="/images/mugshot@2x.jpeg 2x, /images/mugshot@3x.jpeg 3x">
-        <img src="/images/memoji-1.png" id="memoji" style="display: none;">
+        <img src="/assets/images/mugshot.jpeg" alt="Mugshot" class="mugshot"
+          srcset="/assets/images/mugshot@2x.jpeg 2x, /assets/images/mugshot@3x.jpeg 3x">
+        <img src="/assets/images/memoji-1.png" id="memoji" style="display: none;">
       </div>
       <div class="intro-container">
         <h1 class="name"><a href="/">Shayan Yousefizadeh</a></h1>
@@ -36,7 +37,7 @@
         memoji.style.setProperty("display", "none");
       } else {
         memoji.style.setProperty("display", "block");
-        memoji.setAttribute("src", `/images/memoji-${i%4}.png`);
+        memoji.setAttribute("src", `/assets/images/memoji-${i%4}.png`);
       }
     }
 
