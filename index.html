@@ -20,10 +20,20 @@
       </div>
       <div class="intro-container">
         <h1 class="name"><a href="/">Shayan Yousefizadeh</a></h1>
-        <p class="description">I'm a software developer specialising in iOS. I strive for efficiency and well designed experiences. Previously I led iOS development at <a href="http://www.thejournal.ie">TheJournal</a>.</p>
+        <p id="ipa">/shɑːyɑːn yuːsefiːzɑːdeh/ <em>noun</em>
+          <audio>
+            <source src="/assets/audio/name.mp3" type="audio/mpeg"></audio>
+        </p>
+        <p class="description">Passionate mobile engineer with ${experience} years professional experience.
+        <p class="description">Pragmatic, user-centered, and design-focused.</p>
+        <p class="description"><strong>Currently:</strong> iOS at <a href="https://www.workday.com">Workday</a>.</p>
       </div>
     </header>
-    <footer><script>populateFooter()</script></footer>
+    <footer>
+      <script>
+        populateFooter()
+      </script>
+    </footer>
   </div>
 
   <script>
@@ -41,8 +51,22 @@
       }
     }
 
-    var el = document.getElementsByClassName("mugshot-container")[0];
+    var el = document.getElementsByClassName("mugshot")[0];
     el.addEventListener("click", goofItUp, false);
+    el = document.getElementById("memoji");
+    el.addEventListener("click", goofItUp, false);
+
+    const pronounceName = () => {
+      document.getElementsByTagName("audio")[0].play()
+    }
+
+    el = document.getElementById("ipa");
+    el.addEventListener("click", pronounceName, false);
+
+    var experience = yearsSince(1420113600);
+    var descriptionElement = document.getElementsByClassName("description")[0];
+    descriptionElement.textContent = descriptionElement.textContent.replace("${experience}",
+      experience);
   </script>
 </body>
 
