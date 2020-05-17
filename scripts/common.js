@@ -14,4 +14,10 @@ const footerHTML = '\
 
 function populateFooter() {
   document.getElementsByTagName("footer")[0].insertAdjacentHTML('afterbegin', footerHTML)
-}
+};
+
+let yearsSince = date => {
+  var now = Date.now() / 1000; // ms -> s
+  var elapsed = now - date;
+  return Math.floor(elapsed / (60 * 60 * 24 * 365));
+};
